@@ -1,0 +1,132 @@
+@mixin zIndexTop {
+  z-index: 99999999;
+}
+
+@mixin z-index-top {
+  z-index: 99999999;
+}
+
+
+
+@mixin before-Cover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin beforeCover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+@mixin background-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin before-cover-overlay {
+  @include before-Cover;
+  background-color: $black;
+  opacity: 0.65;
+}
+
+@mixin before-cover-overlay-hover {
+
+}
+
+@mixin content {
+  position: relative;
+  z-index: 2;
+
+}
+
+
+@mixin global-item-before {
+  position: relative;
+
+  &::before {
+    @include before-cover-overlay;
+    @include transition-global;
+  }
+
+  &:hover {
+    &::before {
+      opacity: .6;
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+@mixin global-item-hover {
+  position: relative;
+
+  .content {
+    @include transition-global;
+    opacity: 0;
+
+    @include bp(small) {
+      opacity: 1;
+    }
+  }
+
+  &.show {
+
+    .content {
+      @include transition-global;
+      opacity: 1;
+
+      @include bp(small) {
+        opacity: 1;
+      }
+    }
+    &::before {
+      @include before-cover;
+      background-color: $color-dark-purple;
+      opacity: 0.5;
+
+
+    }
+  }
+
+  @include transition-global;
+  &::before {
+    @include before-cover;
+    background-color: $color-dark-purple;
+    opacity: 0;
+
+    @include bp(small) {
+      opacity: .65;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .content {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: .65;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+.members-list-section {
+
+  margin: $gutter 0;
+
+
+  .members-list-filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    // margin: $gutter 0;
+    flex-wrap: wrap;
+
+    @include bp(small) {
+     flex-direction: column;
+     text-align: center;
+     justify-content: center;
+    }
+
+    .chapter-names {
+      width: auto;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+
+      @include bp(small) {
+       flex-direction: column;
+      }
+
+      .icon {
+        color: $color-medium-gray;
+      }
+
+      .chapter {
+        @include font-weight-bold;
+        @include letter-spacing;
+        @include pointer;
+        margin: 0 $gutter / 3;
+        white-space: nowrap;
+        color: $black;
+        @include transition-global;
+
+        @include bp(small) {
+          width: 100%;
+        }
+
+        &.active {
+          color: $color-accent;
+        }
+
+        &:hover {
+          color: $color-accent;
+        }
+
+        &.see-all {
+          @include font-weight-light;
+
+        }
+      }
+
+    }
+
+    .filter-members-length {
+      white-space: nowrap;
+      display: flex;
+      margin: 0 $gutter / 3;
+
+      @include bp(small) {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+    }
+
+    .members-list-filter-search {
+     margin: 0 $gutter / 3;
+      width: auto;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      @include bp(small) {
+        width: 100%;
+      }
+    }
+
+
+  }
+
+
+  .members-list {
+    display: grid;
+    grid-gap: $grid-gap;
+    // grid: auto-flow / 1fr 1fr;
+    width: 100%;
+    // grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, 1fr);
+    @include bp(small) {
+    grid: auto-flow / 1fr;
+  }
+
+  .member-list-item {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    @include border-radius;
+    background-color: $color-light-gray;
+
+    a {
+      padding: $gutter;
+      width: 100%;
+      height: 100%;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      display: grid;
+      @include transition-global;
+
+      @include bp(small){
+        padding: $gutter-small;
+      }
+
+      &:hover {
+        background-color: darken($color-light-gray, 3%);
+
+      }
+
+      .member-name {
+        text-align: center;
+        text-transform: uppercase;
+        @include letter-spacing;
+      }
+
+      .member-chapter {
+        text-align: center;
+        @include font-size-small;
+        color: $color-accent;
+        text-transform: uppercase;
+        @include font-weight-light;
+        @include letter-spacing;
+      }
+
+
+      .member-image {
+        padding: $gutter;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        margin-bottom: $gutter / 3;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+
+      }
+
+    }
+
+
+  }
+}
+}
+
+
+
+
+// .memberStyle {
+//     background-color: #dcdbdb;
+// }
+//
+// .memberStyle img {
+//     width: 100%;
+//     height: auto;
+//     border-radius: 100%;
+// }
+//
+// .memberListStyle {
+//     padding-left: 8vh;
+//     padding-right: 8vh;
+// }
+//
+// .membersFilterBar {
+//     padding-left: 8vh;
+//     padding-right: 8vh;
+//     display: flex;
+// }
+//
+// .breweryTitle {
+//     font-size: 24px;
+//     font-weight: bold;
+// }
+//
+// .chapterListItem {
+//     padding-top: 2vh;
+// }
+//
+// .membersFilterForm {
+//     position: relative;
+// }
+//
+// .membersFilterForm span {
+//     color: grey;
+//     position: absolute;
+//     top: 40%;
+//     right: 2%;
+// }

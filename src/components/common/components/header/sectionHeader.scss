@@ -1,0 +1,29 @@
+.sectionHeader {
+  text-transform: uppercase;
+
+  color: $black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+
+  }
+  .description {
+    color: darken($color-gray, 15%);
+    letter-spacing: 0.125em;
+    font-style: italic;
+    margin: 0;
+    @include font-weight-light;
+  }
+
+  svg {
+    color: $color-accent-light;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}

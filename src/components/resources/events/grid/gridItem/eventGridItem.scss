@@ -1,0 +1,121 @@
+.featured-event {
+  width: 100%;
+  display: flex;
+
+
+  .event-grid-item {
+    width: 100%;
+    min-height: 25vh;
+    font-size: 160%;
+  }
+}
+
+.event-grid-item {
+  @include background-image;
+  position: relative;
+  padding: $gutter;
+
+  @include global-item-before;
+
+  .content {
+    @include content;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin: $gutter / 4 0;
+
+      .event-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .day {
+          font-size: $font-size-large;
+          @include letter-spacing;
+          color: $color-accent-light;
+        }
+
+        .month {
+          @include font-weight-light;
+          @include letter-spacing;
+          color: $color-accent-light;
+        }
+
+      }
+
+      .icon {
+        color: $color-accent-light;
+      }
+    }
+
+    .center {
+
+      margin: $gutter / 2 0;
+
+      .member-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          border-radius: 100%;
+          width: 20px;
+          border: solid 1px $white;
+        }
+      }
+
+      .event-title {
+        color: $white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: $gutter / 4 0;
+        @include letter-spacing;
+
+      }
+
+      .event-location-name {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include font-size-medium;
+        letter-spacing: 0.05em;
+        margin: $gutter / 4 0;
+        @include font-weight-medium;
+        font-style: italic;
+
+      }
+
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: $gutter / 4 0;
+      @include letter-spacing;
+
+      .event-tag {
+        font-size: $font-size-small;
+        color: $color-accent-light;
+      }
+      .event-time {
+        font-size: $font-size-small;
+        color: $color-accent-light;
+      }
+    }
+
+
+
+
+  }
+}

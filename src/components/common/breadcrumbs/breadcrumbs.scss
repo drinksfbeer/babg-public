@@ -1,0 +1,90 @@
+$breadcrumbText: $color-accent;
+
+.breadcrumbs {
+  background-color: lighten($breadcrumbText, 35%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: $gutter / 3;
+
+  @include bp(small) {
+    display: none;
+  }
+
+  .title {
+    display: flex;
+    width: auto;
+    margin-right: $gutter;
+    color: $breadcrumbText;
+  }
+
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .url-string  {
+    display: flex;
+    width: auto;
+    margin: 0;
+
+    li {
+      margin: 0 $gutter / 6 0 0;
+      color: $breadcrumbText;
+
+      &:after {
+        content: '/';
+      }
+
+      a {
+        padding-right: $gutter / 6;
+        @include font-weight-medium;
+        letter-spacing: .085em;
+        font-size: 90%;
+        color: $breadcrumbText;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        @include font-weight-bold;
+        padding-right: $gutter / 6;
+        letter-spacing: .085em;
+        color: $breadcrumbText;
+      }
+
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }//last-child
+
+    }//li
+  }
+
+  .anchors {
+    margin: 0;
+    display: flex;
+    width: auto;
+
+    li {
+       margin: 0 $gutter / 3;
+       color: $breadcrumbText;
+
+      a, span{
+        @include font-weight-bold;
+        letter-spacing: .085em;
+        color: $breadcrumbText;
+
+      }
+
+
+    }//li
+
+  }
+}

@@ -1,0 +1,36 @@
+.locations-list-item {
+
+  @include background-image;
+  position: relative;
+  padding: $gutter;
+
+  @include global-item-before;
+
+
+  .content {
+    @include content;
+    color: $white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .location-name {
+      color: $white;
+    }
+    .location-address {
+      color: $white;
+      @include font-weight-light;
+      letter-spacing: .075em;
+      display: flex;
+      @include flex-column-center;
+
+      .street-address {
+        @include font-size-medium;
+        margin: $gutter / 4 0;
+      }
+      .city-state {
+        @include font-size-small;
+      }
+    }
+  }
+}

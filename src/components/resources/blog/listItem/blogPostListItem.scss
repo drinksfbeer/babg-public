@@ -1,0 +1,27 @@
+.blogPostListItem {
+  min-height: 30vh;
+  display: flex;
+
+  h1, p {
+   color: $white;
+   position: relative;
+   z-index: 3;
+  }
+
+  .blogPostListItemContent {
+    background-position: center;
+    background-size: cover;
+    padding: $gutter;
+
+    &::before {
+     @include before-cover-overlay;
+    }
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

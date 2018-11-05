@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+
+$browser-context: 16; // Default
+
+@function em-cal($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}em;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+
+  $gutter: $gutter;
+  @include bp(small){
+    $gutter: $gutter / 2;
+  }
+
+
+  .site-wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+}
+
+body {
+  height: 100%;
+  border: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+@mixin section-standard {
+  padding: $gutter 0;
+}
+
+.section-standard {
+  @include section-standard;
+}
+
+input {
+  width: 100%;
+}
+
+a {
+  // @include letter-spacing;
+  color: $color-primary;
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+
+  &:hover {
+
+  }
+}
+
+.player-wrapper {
+  padding-top: 56.25%; // Player ratio: 100 / (1280 / 720)
+  position: relative;
+}
+
+.react-player {
+  left: 0;
+  position: absolute;
+  top: 0;
+
+  div {
+    background-color: white !important;
+  }
+}
+
+.react-player-container {
+  video {
+    object-fit: cover;
+	}
+}
+
+.video-header {
+  position: relative;
+  top: - $gutter;
+  z-index: 99999;
+}

@@ -1,0 +1,178 @@
+
+$button-bg: $color-accent;
+$list-bg: lighten($color-accent, 10%);
+$light-bg-hover: darken($list-bg, 4%);
+
+.dropdown {
+  display: flex;
+
+  @include bp(small) {
+    width: 100%;
+    display: none;
+  }
+
+  .drop-button {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include pointer;
+     background-color: $button-bg;
+
+    &:hover {
+      .dropdown-title {
+        // background-color: lighten($color-accent, 10%);
+      }
+
+      .dropdownToggle {
+        background-color: $list-bg;
+      }
+    }
+
+    .dropdown-title {
+      position: relative;
+      // background-color: $color-accent;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: $white;
+      white-space: nowrap;
+      flex-direction: column;
+      width: 100%;
+
+      @include bp(small) {
+        width: 100%;
+      }
+
+
+      .inside {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter / 3 $gutter;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+        @include letter-spacing;
+        @include font-weight-medium;
+
+        .choose {
+          width: 100%;
+          font-size: .75em;
+          @include letter-spacing;
+
+        }
+
+        .chapter {
+          width: 100%;
+          @include letter-spacing;
+
+        }
+      }
+
+
+    }
+
+    .dropdownToggle {
+      @include transition-global;
+      color: $white;
+      padding: $gutter / 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-accent;
+      @include pointer;
+    }
+
+  }
+
+}
+
+
+
+
+.dropdownContent{
+  position: absolute;
+  width: auto;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 1000000000000000000;
+  display: none;
+  background-color: $white;
+  margin: 0;
+  flex-direction: row;
+  background-color: $color-light-gray;
+  @include transition-global;
+
+  @include bp(small){
+    flex-direction: column;
+    li a {
+      padding: $gutter / 2 !important;
+    }
+  }
+
+
+    li {
+      width: 100%;
+
+      &:last-child a{
+        border-right: 0;
+        @include bp(small) {
+          border-bottom: 0;
+        }
+
+      }
+
+      a {
+        width: 100%;
+        padding: $gutter;
+        text-transform: uppercase;
+        color: $white;
+        @include letter-spacing;
+        text-align: center;
+        white-space: nowrap;
+        background-color: $list-bg;
+        // border-right: solid 1px $light-bg-hover;
+        letter-spacing: .125em;
+        @include font-weight-medium;
+
+        @include bp(small) {
+          border-right: 0;
+          border-bottom: solid 2px $light-bg-hover;
+        }
+
+        &:hover {
+          background-color: $light-bg-hover;
+          color: $white;
+        }
+
+        svg {
+          margin-right: $gutter / 3;
+        }
+
+      }
+    }
+}
+
+.active {
+
+  .dropdownContent {
+    display: flex;
+  }
+
+  .drop-button {
+    .dropdownToggle {
+      background-color: $list-bg;
+    }
+  }
+
+}
+
+.dropdown-content-item {
+  display: block;
+}

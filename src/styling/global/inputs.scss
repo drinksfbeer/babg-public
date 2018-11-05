@@ -1,0 +1,91 @@
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: $gutter / 4 $gutter / 3;
+  border: 1px solid #cacaca;
+  border-radius: $input-radius;
+  background-color: $white;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #0a0a0a;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+textarea[rows] {
+  height: auto;
+}
+select {
+  padding: 0.5rem;
+  appearance: none;
+  width: 100%;
+  border: 1px solid #cacaca;
+  border-radius: 3px;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #0a0a0a;
+  background-origin: content-box;
+  background-position: right -1rem center;
+  background-repeat: no-repeat;
+  background-size: 9px 6px;
+  padding-right: 1.5rem;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
+label {
+  padding-bottom: $gutter/3;
+  font-size: $font-size-medium;
+  color: $black;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.field {
+  width: 100%;
+
+  label {
+    width: 100%;
+
+  }
+  input, textarea {
+    width: 100%;
+    margin-top: $gutter / 3;
+  }
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  .input-group-field {
+
+  }
+  .input-group-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    padding: 0 $gutter / 2;
+
+    color: $white;
+    width: auto;
+    text-transform: capitalize;
+    border: 0;
+    box-shadow: none;
+    text-align: center;
+    border-radius: 0;
+
+    svg {
+      color: $white;
+    }
+
+
+
+  }
+}

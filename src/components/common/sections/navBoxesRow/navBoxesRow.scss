@@ -1,0 +1,25 @@
+.nav-boxes {
+
+  .nav-box {
+    position: relative;
+    padding: $section-gutter;
+    @include section-background-image;
+    @include section-global-item-before;
+
+    &:before {
+    }
+
+    .content {
+      @include section-content;
+
+      .title {
+        color: $white;
+        text-transform: uppercase;
+      }
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+}

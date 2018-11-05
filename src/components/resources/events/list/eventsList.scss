@@ -1,0 +1,83 @@
+.events-list-container {
+display: flex;
+flex-direction: column;
+
+
+}
+
+.eventsAllChapters:hover{
+  cursor: pointer;
+}
+
+.events-list {
+
+  margin: $gutter * 2 0;
+
+
+}
+
+
+.events-filter {
+  background-color: $color-light-gray;
+
+  .events-filter-form {
+
+  }
+
+}
+
+
+//
+// .eventListImage {
+//     background-position: center;
+//     background-size: cover;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     color: white;
+// }
+//
+// .eventListImage .dateDayNumber {
+//     font-size: 3em;
+// }
+//
+// .eventDescription {
+//     min-height: 30vh;
+//     padding: 3vh;
+// }
+//
+// .eventsList {
+//     padding-left: 10vh;
+//     padding-right: 10vh;
+// }
+//
+// .eventsList hr {
+//     margin-top: 5vh;
+//     margin-bottom: -2vh;
+// }
+//
+// .eventDescriptionTop {
+//     height: 95%;
+// }
+//
+// .eventDescriptionBottom {
+//     height: 5%;
+// }
+//
+// h2 span {
+//     margin-left: 3vh;
+//     font-size: .6em;
+// }
+//
+// .eventsSearch {
+//     position: relative;
+// }
+//
+// .eventsSearch span {
+//     color: grey;
+//     display: block;
+//     position: absolute;
+//     top: 20%;
+//     right: 2%;
+// }

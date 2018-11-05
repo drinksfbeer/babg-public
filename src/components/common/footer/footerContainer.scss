@@ -1,0 +1,45 @@
+.footerContainer {
+  width: 100%;
+  display: flex;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  @include flex-column-center;
+
+  footer {
+    background-color: $black;
+    padding: $gutter;
+
+    @include flex-column-center;
+
+    .legal {
+      width: 100%;
+      justify-content: center;
+      color: $color-gray;
+      @include font-size-small;
+      letter-spacing: .25em;
+    }
+
+    .footer-nav {
+      ul {
+        li {
+          margin: 0 $gutter / 3;
+
+          a {
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 0.125em;
+            @include font-weight-medium;
+          }
+        }
+      }
+    }
+  }
+
+  .sign-up {
+    background-color: $color-light-gray;
+    width: 100%;
+  }
+
+}

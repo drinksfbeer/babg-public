@@ -1,0 +1,76 @@
+.chapters {
+  @include page-margin;
+
+  .chapters-list {
+
+    display: grid;
+    grid-gap: $grid-gap;
+    width: 100%;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, 1fr);
+    @include bp(small) {
+      grid: auto-flow / 1fr;
+    }
+
+    .chapter-item {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      padding: $gutter;
+      position: relative;
+      min-height: 300px;
+
+     @include global-item-before;
+
+      .content {
+
+        @include flex-column-center;
+        color: $white;
+
+
+        .chapter-name {
+          text-transform: uppercase;
+          color: $white;
+        }
+
+        .chapter {
+          color: $white;
+          @include font-weight-light;
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+
+
+// .cell .chapterItem {
+//   min-height: 30vh;
+//   background-position: center;
+//   background-size: cover;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: white;
+//   font-size: 3em;
+// }
+//
+// .chapterBox {
+//   padding: 2vh;
+// }
+//
+// .chapterContainer {
+//   padding-left: 10vh;
+//   padding-right: 10vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }

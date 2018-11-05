@@ -1,0 +1,124 @@
+.location-container {
+
+  .location-header {
+   @include background-image;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+    background-color: $black;
+    color: $white;
+    position: relative;
+    padding: $gutter * 2 $gutter;
+
+    @include flex-column-center;
+
+    &::before {
+      @include before-cover-overlay;
+    }
+
+    .content {
+      @include content;
+      @include flex-column-center;
+
+      .location-name {
+        color: $white;
+        text-transform: uppercase;
+      }
+
+      .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $gutter / 3;
+      }
+
+      .member-name {
+        color: $color-accent-light;
+        text-transform: uppercase;
+        @include font-weight-light;
+        letter-spacing: 0.25em;
+        border-bottom: solid 1px transparent;
+        @include transition-global;
+        @include font-size-small;
+      }
+
+      .member-logo {
+        img {
+          border-radius: 100%;
+          border: solid 1px $white;
+          width: 40px;
+        }
+      }
+
+      .address {
+        letter-spacing: 0.125em;
+        color: $white;
+        font-weight: normal;
+        &:hover {
+          color: $color-light-gray;
+        }
+      }
+
+      .stage {
+        margin-top: $gutter / 3;
+        @include font-size-small;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-bottom: $gutter / 3;
+      }
+    }
+  }
+
+  .location-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: .085em;
+    @include font-weight-bold;
+  }
+
+  .location-phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    a {
+      @include font-weight-bold;
+      letter-spacing: .085em;
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  .location-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    li {
+      @include font-weight-bold;
+      letter-spacing: .085em;
+    }
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    li {
+      @include font-weight-bold;
+      letter-spacing: .085em;
+      text-transform: capitalize;
+    }
+  }
+}

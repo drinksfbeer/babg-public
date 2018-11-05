@@ -1,0 +1,174 @@
+@import '../../../../styling/global/global-all';
+
+$button-padding: $gutter / 2 $gutter / 1.5;
+$button-background-color: #222;
+$button-text-color: $white;
+
+.button {
+  background-color: $button-background-color;
+  border: 0;
+  color: $button-text-color;
+  @include secondary-font;
+  font-size: .85em;
+  letter-spacing: 0.25em;
+  @include font-weight-bold;
+  @include transition-global;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  border-radius: $globalRadius;
+  text-transform: uppercase;
+
+  a, .inside {
+    width: 100%;
+    height: 100%;
+    padding: $button-padding;
+    border-radius: $globalRadius;
+    color: $button-text-color;
+  }
+
+  &.no-link {
+    width: auto;
+    height: auto;
+    // padding: $button-padding;
+    border-radius: $globalRadius;
+  }
+
+  @include bp(small) {
+    width: 100%;
+    font-size: $font-size-medium;
+    padding: $button-padding / 3;
+  }
+
+  svg {
+    margin-right: $gutter / 4;
+  }
+
+  i {
+    margin-right: $gutter / 4;
+  }
+
+
+  &:hover, &:focus {
+    @include pointer;
+    background-color: darken($button-background-color, 4%);
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: solid 1px $button-background-color;
+    color: $button-background-color;
+
+    a, .inside {
+      background-color: transparent;
+      color: $button-background-color;
+    }
+  }
+}//button
+
+
+.button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @include bp(small) {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: $gutter / 3;
+  }
+}
+
+
+@mixin button($bg, $text-color) {
+  background-color: $bg;
+  color: $text-color;
+
+  a, .inside {
+    color: $text-color;
+  }
+
+  &:hover, &:focus {
+    background-color: darken($bg, 10%);
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border-color: $bg;
+    color: $text-color;
+
+    a, .inside {
+       background-color: transparent;
+       color: $text-color;
+    }
+
+    &:hover {
+      border-color: darken($bg, 10%);
+
+      a, .inside {
+        color: darken($bg, 10%);
+      }
+    }
+  }
+}//button mixin
+
+
+.button {
+  &.white {
+    @include button($white, $black);
+  }
+
+  &.outlined {
+    &.gray {
+      @include button($color-gray, $color-gray);
+    }
+  }
+}
+
+
+.button {
+  &.small {
+    padding: 0;
+    a, .inside {
+      padding: $gutter / 3 $gutter / 2.5;
+      font-size: 80%;
+    }
+  }
+}
+
+
+// a {
+//   &:hover {
+//     .button {
+//       background-color: $button-background-color;
+//     }
+//   }
+//
+//   .button {
+//     &:hover {
+//       background-color: $button-background-color;
+//     }
+//   }
+//
+// }
+
+// .buttonComponent {
+//   background-color: white;
+//   padding: 10px 28px 10px 28px;
+//   font-weight: bold;
+// }
+//
+// .buttonComponent:hover {
+//   .buttonComponentLink {
+//       color: white;
+//   }
+// }

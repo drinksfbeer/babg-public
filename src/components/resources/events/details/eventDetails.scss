@@ -1,0 +1,118 @@
+.event-details-container {
+
+
+  .event-header {
+    @include background-image;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 25vh;
+    justify-content: center;
+    height: 100%;
+
+    &::before {
+      @include before-cover-overlay;
+    }
+
+    .content {
+     @include content;
+     padding: $gutter;
+     height: 100%;
+     width: 100%;
+
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+
+     div, h2 {
+       margin: $gutter / 3 0;
+     }
+
+     .button-group {
+       margin: 0;
+     }
+
+    }
+
+
+    .event-location-name {
+      color: $white;
+      @include font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+
+      &:hover {
+        color: $color-accent-light;
+      }
+    }
+
+    .eventAddress {
+      color: $white;
+      font-weight: normal;
+      margin: 10px 0 10px 0;
+      &:hover {
+        color: $color-light-gray;
+      }
+    }
+
+    .event-title {
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+
+    }
+
+    .event-date {
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .event-time {
+      letter-spacing: 0.125em;
+    }
+
+    .member {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .member-logo {
+        width: 40px;
+        border-radius: 100%;
+        height: auto;
+
+        img {
+          border: solid 2px $white;
+          border-radius: 100%;
+        }
+      }
+
+      .event-member-name {
+        color: $color-accent-light;
+        text-transform: uppercase;
+        @include font-weight-light;
+        letter-spacing: 0.25em;
+        border-bottom: solid 1px transparent;
+        @include transition-global;
+      }
+
+      &:hover {
+        .event-member-name {
+          border-bottom: solid 1px $color-accent-light;
+        }
+      }
+
+    }
+
+
+
+  }//header
+
+  .event-description {
+    text-align: center;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,17 @@
+.locations-list {
+  display: grid;
+  grid-gap: 20px;
+  // grid: auto-flow / 1fr 1fr;
+  width: 100%;
+  // grid-template-columns: repeat(12, 1fr);
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, 1fr);
+  @include bp(small) {
+    grid: auto-flow / 1fr;
+  }
+
+  .icon {
+    color: $color-accent-light;
+  }
+
+}

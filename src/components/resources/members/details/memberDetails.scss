@@ -1,0 +1,77 @@
+.member-details {
+  .member-header {
+    @include background-image;
+    @include flex-column-center;
+    padding: $gutter;
+    position: relative;
+
+    &::before {
+      @include before-cover-overlay;
+    }
+
+    .content {
+      @include content;
+      @include flex-column-center;
+
+      .member {
+        .member-name {
+          color: $color-accent-light;
+          text-transform: uppercase;
+          @include font-weight-bold;
+          border-bottom: solid 1px transparent;
+          letter-spacing: 0.25em;
+          @include transition-global;
+        }
+        .member-logo {
+          img {
+            border: solid 1px $white;
+            border-radius: 100%;
+            width: 120px;
+            background-color: $white;
+          }
+        }
+        .member-website {
+          color: $white;
+          letter-spacing: .085em;
+          @include font-weight-bold;
+        }
+      }
+
+      .description {
+        color: $white;
+        margin-bottom: $gutter / 2;
+
+        .desction {
+          color: $white;
+        }
+
+        .read-more {
+          color: $white;
+          cursor: pointer;
+        }
+      }
+
+      .member-chapter {
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        @include font-weight-medium;
+
+        a {
+          color: $color-accent-light;
+        }
+      }
+    }
+
+    .social-links {
+      color: $white;
+
+      a {
+        margin: 0 $gutter / 3;
+      }
+      svg {
+        color: $white;
+      }
+    }
+
+  }
+}

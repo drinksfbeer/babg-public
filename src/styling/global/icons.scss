@@ -1,0 +1,18 @@
+svg,
+i {
+  &.pink {
+    color: $color-pink;
+  }
+
+  &.green {
+    color: $color-green;
+  }
+
+  &.yellow {
+    color: $color-yellow;
+  }
+
+  &.purple {
+    color: $color-purple;
+  }
+}
